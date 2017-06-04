@@ -132,6 +132,7 @@
 ?>
 
 
+
 <html>
 
 <title>Preview Credential</title>
@@ -141,7 +142,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css" media="screen"></style>
 
       <style type="text/css" media="print">
        .no-print { display: none; }
@@ -149,17 +152,17 @@
 
 </head>
 <body>
-<page>
-<div id="outer">
+<page> 
+    <div id="outer">
 
-      <img src="../../assets/images/ed.png" id="img1">
+      <img src="../../assets/images/deped.png" id="img1">
       <img src="../../assets/images/pinesdiploma.png" id="img2">
 
 
       <br/><br/>
        <span class="text1"> REPUBLIKA NG PILIPINAS </span>
        <br/>
-       <span class="subtext"> Republic of the Philippines </span><br/><br/>
+       <span class="subtext"> Republic of the Philippines </span><br/>
        <span class="text1"> KAGAWARAN NG EDUKASYON </span><br/>
        <span class="subtext"> Department of Education </span>
        <br/><br/>
@@ -170,7 +173,7 @@
       <span id="big"> PINES CITY NATIONAL HIGH SCHOOL </span><br/>
       <span class="text1"> PAARALAN (School) </span><br/>
       <span class="text3"> Pinatutunayan nito na si </span><br/>
-      <span class="text2"> This certifies that </span><br/><br/>
+      <span class="text2"> This certifies that </span><br/>
 
        <span id="big2"> <?php echo "$stud_name";?> </span><br/>
 
@@ -179,15 +182,17 @@
         <span class="text3">Edukasyong Sekundarya na itinakda para sa Mataas na Paaralan ng Republika ng</span><br/>
         <span class="text2"> Secondary Education Curriculum prescribed for High Schools of the Republic of</span><br/>
          <span class="text3">Pilipinas kaya siya'y karapat-dapat na tumanggap nitong</span><br/>
-        <span class="text2">The Philippines and is therefore entitled to receive this</span><br/>
+        <span class="text2">the Philippines and is therefore entitled to receive this</span><br/>
         <br/>
         <img src="../../assets/images/katunayan.png" id="img3"> <br/>
 
         <span class="text3"> Nilagdaan sa Lungsod ng Baguio,Pilipinas ngayong ika- <span id="dd2" name="date"><?php echo "$grad_day";?></span> ng <?php echo "$grad_month_fil";?>, <?php echo "$yr_ended";?> <span="text" id="mm" name="month"></span><span type="text" id="dd" name="year"></span></span><br/>
-        <span class="text2"> Signed in Baguio City, Philippines this <span id="dd1" name="date"></span> day of <?php echo "$grad_day";?> <span id="mm1" name="month"><?php echo "$grad_month";?> </span>, <span="text" id="dd1" name="year"><?php echo "$yr_ended";?></span></span><br/><br/>
+        <span class="text2"> Signed in Baguio City, Philippines this <?php echo "$grad_day";?> day of <span id="dd1" name="date"></span>  <span id="mm1" name="month"><?php echo "$grad_month";?> </span>, <span="text" id="dd1" name="year"><?php echo "$yr_ended";?></span></span><br/><br/>
+
 
 
           <?php
+          
           if ($curr_year == $yr_ended) {
                       echo<<<signatories
               <br><br>
@@ -196,6 +201,7 @@
                       font-family: Times New Roman;
                       border-collapse: collapse;
                       width: 100%;
+                      
                   }
             </style>
               <table>
@@ -206,7 +212,7 @@
                     </tr>
                     <tr>
                       <th align = "center">Principal</th>
-                      <th align = "center">Superintendent</th>
+                      <th align = "center">Schools Division Superintendent</th>
                     </tr>
                   </thead>
               <table>
@@ -215,24 +221,50 @@ signatories;
             }else if ($curr_year != $yr_ended){
           echo<<<signatories
               <br><br>
+    
               <style>
                   table {
                       font-family: Times New Roman;
                       border-collapse: collapse;
                       width: 100%;
+                      font-style: bold;
                   }
+                #datenow{
+                      font size: 11px;
+                      font-family: calibri;
+                      text-align: left;
+                      font-style:underline;
+                  }
+                  #scopy{
+                      font-size: 12px;
+                      font-family: calibri;
+                      text-align:left;
+                    }
+                  #dateinit{
+                      font-size: 12px;
+                      font-family: calibri;
+                      text-align:left;
+                    }
+
+
             </style>
               <table>
                 <thead>
                     <tr>
+                      <th align = "center"><div id="scopy">Second Copy</div><br/>
+                                   <div id="datenow">$date</div></th>
                       <th align = "center">$current_principal</th>
-                      <th align = "center">$si_name</th>
                       <th align = "center">$prin_name</th>
+                      <th align = "center">$si_name</th>
+                      
                     </tr>
                     <tr>
-                      <th align = "center">Principal</th>
-                      <th align = "center">Superintendent</th>
-                      <th align = "center">Principal</th>
+                      
+                                          
+                      <th align = "center"><div id="dateinit">Date & Initial</div></th>
+                      <th align = "center">Secondary School Principal</th>
+                      <th align = "center">Secondary School Principal</th>
+                      <th align = "center">Schools Division Superintendent</th>
                     </tr>
                   </thead>
               <table>
@@ -241,11 +273,12 @@ signatories;
           ?>
               </div>
            </div>
+           
                  <div class="row no-print">
         <br>
         <div class="col-md-8">
-          <a href="../../registrar" > Back to Home</a>
-          <button class="btn btn-success pull-right" onclick="window.print()"><i class="fa fa-print"></i> Print</button>
+          <a href="../../registrar" class="btn btn-success pull-right"><i class="fa fa-home"></i> Back to Home</a>
+         <button class="btn btn-success pull-right" onclick="window.print()"><i class="fa fa-print"></i> Print</button>
         </div>
       </div>
 
