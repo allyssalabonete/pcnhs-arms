@@ -1,12 +1,16 @@
 
-
+body{
+	width: auto;
+	height: auto;
+}
 #outer{
-
+	width: auto;
+	height: auto;
     text-align: center;
-    border: 30px solid transparent;
-    padding: 10px;
-    border-image: url("../images/border.png") 80 80 stretch;
-    margin: auto;
+    border: 50px solid transparent;
+    padding: 8px;
+    border-image: url("../images/border.png") 150 150 stretch;
+  
 
 }
 
@@ -15,30 +19,46 @@
     src: url('../fonts/EdwardianScriptITC.ttf');
 }
 
-@page {
-    size: landscape;
-    margin: 0;
+#diploma{
+	
+	background-color: white;
+	color: black;	
+	max-width: 10in;
 }
 
-@media print {  
-  @page {
-    size: 14in 17in;
-    size: landscape; /* landscape */
-    /* you can also specify margins here: */
-    margin: 5mm;
-    margin-right: 30mm; /* for compatibility with both A4 and Letter */
+@media print {
+  body, page {
+    margin: 0;
+    box-shadow: 0;
   }
 }
+
+page {
+	size: 12.4in 9.45in;  
+}
+
+body {
+  background: rgb(204,204,204); 
+}
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+}
+
 .text1{
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: bold;
 	font-family: Times New Roman;
 
 }
 .subtext{
-	font-size: 18px;
+	font-size: 12px;
 	font-weight: bold;
-	font-family: times New Roman
+	font-family: times New Roman;
+	text-align: justify;
 
 }
 .text2{
@@ -46,32 +66,37 @@
 	font-family: Times New Roman;
 	font-style: italic;
 	font-weight: bold;
-	word-spacing: 30px;
+	word-spacing: 60px;
+	text-align: justify;
 }
 
 .text3{
-	font-size: 38px;
+	font-size: 42px;
 	font-family: EdwardianScriptITC;
 	letter-spacing: 4px;
 	text-align: justify;
+	word-spacing: 60px;
 }
 
 
 #img1{
 	float: left;
-	margin: 5px;
+	margin: 30px;
 	filter: grayscale(100%);
+	width: 200px;
+	height: 200px;
 }
 #img2{
-
+	width: 200px;
+	height: 200px;
 	float: right;
-	margin: 5px;
+	margin: 30px;
 	
 }
 
 #img3{
-	width: 750px;
-	height: 80px;
+	width: 1000px;
+	height: 100px;
 	margin:auto;
 
 	
@@ -79,15 +104,17 @@
 
 
 #big{
-	font-size: 20px;
+	font-size: 35px;
 	font-weight: bold;
-	line-height: 200%;
+	line-height: 215%;
 }
 
 #big2{
-	font-size: 35px;
+	font-size: 60px;
 	font-weight: bold;
-	line-height: 200%;
+	font-style: italic;
+	line-height: 215%;
+	font-family: Times New Roman;
 }
 
 
@@ -148,6 +175,10 @@
 	font-style: italic;
 	font-weight: bold;
 }
+#scopy{
+	font-size: 10px;
+	font-family: calibri;
+}
 
 .clearfix {
     overflow: auto;
@@ -159,10 +190,11 @@
 .div-right{
     float:right;
     padding-right:10px;
+
 }
 #mid,div-left,div-right {
 	line-height: 100px;
-}
 
+}
 
 
